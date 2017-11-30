@@ -1,0 +1,64 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // font-family: $texto-cuerpo;
+  // padding: 20px;
+}
+
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  clear: both;
+}
+
+.row:before, .row:after{
+  content: " ";
+  display: table;
+}
+
+.row:after{
+  clear: both;
+}
+
+[class*="col-"]{
+  min-height: 7px;
+  padding: 12px;
+  float: left;
+}
+
+.templateRow{
+  content: " ";
+  display: table;
+}
+
+.row{
+  &:before{
+    @extend .templateRow;
+  }
+  &:after{
+    @extend .templateRow;
+    clear: both;
+  }
+}
+
+@function columnWidth($i){
+  @return percentage(($i/12));
+}
+
+@for $i from 1 through 12{
+  .col-#{$i}{
+    width: columnWidth($i);
+  }
+}
+
+@for $i from 1 through 12{
+  .col-#{$i}-offset{
+    margin-left: columnWidth($i);
+  }
+}
+
+.card{
+  border: 1px solid black;
+}
