@@ -9,6 +9,7 @@ var loadPage = function(){
 var loadUser = function(){
   $.getJSON(api.url, function(response){
     var results = response.results;
+    // console.log(results)
     results.forEach(contactList);
   });
 }
@@ -22,27 +23,19 @@ var contactList = function(contact){
   var email = contact.email;
   var cell = contact.cell;
 
-  var templateList = '<div class="row">'+
-                  '<div class="col-6 card">' +
-                    '<div>' +
-                      '<a href="detailContact.html">' +
-                        '<img src='+ picture + '>'
-                      +'</a>' +
-                    '</div>' +
+  var templateList =  '<div class="col-6 card">' +
+                        '<div>' +
+                          '<a href="detailContact.html">' +
+                            '<img src='+ picture + '>'
+                          +'</a>' +
+                        '</div>' +
+                        '<div class="name">' +
+                          '<p>' + firtsName + ' ' + lastName +'</p>' +
+                          '<p>' + '@' + userName + '</p>' +
+                        '</div>' +
+                        // '<div class="userName">' + '@' + userName +'</div>' +
+                      '</div>';
 
-                    '<div class="name">' + firtsName + ' ' + lastName +'</div>' +
-                    '<div class="userName">' + '@' + userName +'</div>' +
-                  '</div>'+
-
-                  '<div class="col-6 card">' +
-                  '<div>' +
-                  '<img src='+ picture + '>' +
-                  '</div>' +
-                  '<div class="name">' + firtsName + ' ' + lastName +'</div>' +
-                  '<div class="userName">' + '@' + userName +'</div>' +
-                  '</div>'+
-
-                 '</div>'
   $('#here').append(templateList);
 
 
@@ -51,8 +44,10 @@ var contactList = function(contact){
                            '<div>' +
                             '<img class="fullPicture" src='+ picture + '>' +
                            '</div>' +
-                           '<div class="name">' + firtsName + ' ' + lastName +'</div>' +
-                           '<div class="userName">' + '@' + userName +'</div>' +
+                           '<div class="bigName">' +
+                             '<p>' + firtsName + ' ' + lastName +'</p>' +
+                             '<p>' + '@' + userName + '</p>' +
+                           '</div>' +
                           '</div>'+
                         '</div>' +
 
@@ -71,8 +66,8 @@ var contactList = function(contact){
                         '</div>'
 
   $("#jiji").append(templateContact);
-
 }
+
 
 
 $(document).ready(loadPage);

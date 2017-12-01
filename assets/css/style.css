@@ -105,16 +105,22 @@ img, .fullPicture {
   width: 100%;
   height: auto; }
 
-.name, .userName {
+.name, .userName, .bigName {
   font-family: "Montserrat", sans-serif;
   color: #fff;
-  font-size: 17px;
-  display: flex;
-  justify-content: center;
-  margin-top: -58px; }
+  font-size: 12px;
+  display: inline-block;
+  position: absolute;
+  margin-top: -58px;
+  text-align: center; }
 
 .userName {
   font-size: 10px;
   margin-top: 2px; }
+
+.bigName {
+  font-size: 20px;
+  margin-top: -98px;
+  margin-left: 94px; }
 
 /*# sourceMappingURL=style.css.map */

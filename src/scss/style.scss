@@ -68,20 +68,15 @@ img{
   height: auto;
 }
 
-// .card{
-//   // border: 1px solid black;
-//   // margin: 1px 10px;
-//   // width: 185px;
-//   display: flex;
-// }
-
 .name{
   font-family: $font-titulo;
   color: #fff;
-  font-size: 17px;
-  display: flex;
-  justify-content: center;
+  font-size: 12px;
+  display: inline-block;
+  position: absolute;
   margin-top: -58px;
+  // margin-left: 30px;
+  text-align: center;
 }
 
 .userName{
@@ -90,7 +85,13 @@ img{
   margin-top: 2px;
 }
 
-
 .fullPicture{
   @extend img;
+}
+
+.bigName{
+  @extend .name;
+  font-size: 20px;
+  margin-top: -98px;
+  margin-left: 94px;
 }
