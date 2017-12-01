@@ -22,17 +22,56 @@ var contactList = function(contact){
   var email = contact.email;
   var cell = contact.cell;
 
-  var template = '<div class="row">'+
+  var templateList = '<div class="row">'+
                   '<div class="col-6 card">' +
                     '<div>' +
-                      '<img src='+ picture + '>' +
+                      '<a href="detailContact.html">' +
+                        '<img src='+ picture + '>'
+                      +'</a>' +
                     '</div>' +
+
                     '<div class="name">' + firtsName + ' ' + lastName +'</div>' +
                     '<div class="userName">' + '@' + userName +'</div>' +
-                 '</div>'+ '<div class="col-6 card">' + '<div>' +
-                 '<img src='+ picture + '>' + '</div>' + '</div>'+ '</div>'
+                  '</div>'+
 
-  $('#here').append(template);
+                  '<div class="col-6 card">' +
+                  '<div>' +
+                  '<img src='+ picture + '>' +
+                  '</div>' +
+                  '<div class="name">' + firtsName + ' ' + lastName +'</div>' +
+                  '<div class="userName">' + '@' + userName +'</div>' +
+                  '</div>'+
+
+                 '</div>'
+  $('#here').append(templateList);
+
+
+  var templateContact = '<div class="row">'+
+                          '<div class="col-12">' +
+                           '<div>' +
+                            '<img class="fullPicture" src='+ picture + '>' +
+                           '</div>' +
+                           '<div class="name">' + firtsName + ' ' + lastName +'</div>' +
+                           '<div class="userName">' + '@' + userName +'</div>' +
+                          '</div>'+
+                        '</div>' +
+
+                        '<div class="row">'+
+                          '<div class="col-12">'+
+                            '<div class="info">'+
+                              location +
+                            '</div>'+
+                            '<div class="info">' +
+                              email +
+                            '</div>' +
+                            '<div class="info">' +
+                              cell +
+                            '</div>' +
+                          '</div>'+
+                        '</div>'
+
+  $("#jiji").append(templateContact);
+
 }
 
 

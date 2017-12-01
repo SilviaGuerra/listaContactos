@@ -64,7 +64,8 @@ $font-link: 'Roboto Mono', monospace;
 }
 
 img{
-  width: 165px;
+  width: 100%;
+  height: auto;
 }
 
 // .card{
@@ -89,9 +90,7 @@ img{
   margin-top: 2px;
 }
 
-// .contentCard{
-//   font-family: $font-titulo;
-//   color: red;
-//   font-size: 12px;
-//
-// }
+
+.fullPicture{
+  @extend img;
+}
