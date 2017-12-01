@@ -101,12 +101,18 @@
 .col-12-offset {
   margin-left: 100%; }
 
+nav ul {
+  list-style: none; }
+
+nav ul li {
+  float: right;
+  margin: 5px 37px; }
+
 img, .fullPicture {
   width: 100%;
   height: auto; }
 
 .name, .userName, .bigName {
-  font-family: "Montserrat", sans-serif;
   color: #fff;
   font-size: 12px;
   display: inline-block;

@@ -1,13 +1,10 @@
-$texto-cuerpo: 'Roboto', sans-serif;
 $font-titulo: 'Montserrat', sans-serif;
-$font-link: 'Roboto Mono', monospace;
 
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: $font-titulo;
-  // padding: 20px;
 }
 
 .container{
@@ -63,19 +60,26 @@ $font-link: 'Roboto Mono', monospace;
   }
 }
 
+nav ul{
+  list-style: none;
+}
+
+nav ul li{
+  float: right;
+  margin: 5px 37px;
+}
+
 img{
   width: 100%;
   height: auto;
 }
 
 .name{
-  font-family: $font-titulo;
   color: #fff;
   font-size: 12px;
   display: inline-block;
   position: absolute;
   margin-top: -58px;
-  // margin-left: 30px;
   text-align: center;
 }
 

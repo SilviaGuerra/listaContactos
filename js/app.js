@@ -9,7 +9,6 @@ var loadPage = function(){
 var loadUser = function(){
   $.getJSON(api.url, function(response){
     var results = response.results;
-    // console.log(results)
     results.forEach(contactList);
   });
 }
@@ -33,7 +32,6 @@ var contactList = function(contact){
                           '<p>' + firtsName + ' ' + lastName +'</p>' +
                           '<p>' + '@' + userName + '</p>' +
                         '</div>' +
-                        // '<div class="userName">' + '@' + userName +'</div>' +
                       '</div>';
 
   $('#here').append(templateList);
@@ -65,7 +63,7 @@ var contactList = function(contact){
                           '</div>'+
                         '</div>'
 
-  $("#jiji").append(templateContact);
+  $("#detail").append(templateContact);
 }
 
 
