@@ -11,7 +11,7 @@ $white: #fff;
 
 .container{
   width: 100%;
-  max-width: 1200px;
+  max-width: 500px;
   margin: 0 auto;
   clear: both;
   background: $background-color;
@@ -63,28 +63,24 @@ $white: #fff;
   }
 }
 
-nav{
+nav ul, footer ul{
   background: $white;
-  height: 40px;
-  position: fixed;
-  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 ul li{
   list-style: none;
-  float: right;
-  margin: 2px 20px;
 }
 
-i{
-  justify-content: space-around;
-  color: $background-color;
-  // border: 1px solid black;
+.material-icons{
+  font-size: 30px !important;
 }
 
-a{
+li a{
   text-decoration: none;
   color: $background-color;
+  // margin-left: 30px;
 }
 
 a:hover{
@@ -117,6 +113,7 @@ img{
 
 .fullPicture{
   @extend img;
+  filter: opacity(30%);
 }
 
 #bigName{
@@ -126,14 +123,32 @@ img{
   margin-left: 94px;
 }
 
+#user{
+  @extend .name;
+  font-size: 20px;
+  margin-top: -68px;
+  margin-left: 94px;
+}
+
+#info{
+  margin: 35px;
+  color: gray;
+  font-size: 20px;
+  line-height: 35px;
+}
 
 .invisible{
   display: none;
 }
 
 footer{
-  // border: 1px solid black;
   background: $white;
-  height: 40px;
-  margin-top: 78px;
+  margin-top: 60px;
+}
+
+@media (max-width: 1200px){
+  img{
+    width: 50%;
+    height: auto;
+  }
 }

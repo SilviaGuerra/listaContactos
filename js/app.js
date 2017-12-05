@@ -20,9 +20,7 @@ var loadUser = function(){
         $("#location").text($(this).find("#street").text());
         $("#email").text($(this).find("#mail").text());
         $("#cell").text($(this).find("#phone").text());
-
       }
-
     });
   });
 }
@@ -53,37 +51,6 @@ var contactList = function(contact){
 
   $('#demo01').append(templateList);
 
-  // $("#location").append(location);
-  // $("#email").append(email);
-  // $("#cell").append(cell);
-
-
-  // $(".card").click(function(){
-  //   console.log($(this).index());
-  //   // $(this).slideUp(function(){
-  //   //   console.log("holaa");
-  //   // });
-  //   if(this){
-  //     // $(this).hide();
-  //     var photo = $("img").attr("src", picture)
-  //
-  //     $("fullPicture").append(photo);
-  //     $(".no").append(firstName + " " + lastName);
-  //     $(".user").append("@" + userName);
-  //
-  //   }
-
-
-    // $(this).click(function(){
-    //   console.log("seleccionado")
-    // });
-  // });
-
 }
-
-
-
-
-
 
 $(document).ready(loadPage);
