@@ -5,24 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Users</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <body>
+  <body class="container">
     <nav>
-      <div>
-        <ul>
-          <li><a class="search"><i class="material-icons">search</i></a></li>
-          <li>Favorites</li>
-          <li>Edit</li>
-        </ul>
-      </div>
+      <ul>
+        <li><a href="#"><i class="material-icons">search</i></a></li>
+        <li><a href="#">Favorites</a></li>
+        <li><a href="#">Edit</a></li>
+      </ul>
     </nav>
-    <section class="container">
-      <div class="row" id="here"></div>
-    </section>
+    <section class="row" id="demo01" href="#animatedModal"></section>
+
+    <!--Call modal-->
+    <!--DEMO01-->
+    <div id="animatedModal">
+      <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+      <div class="close-animatedModal">
+        <i class="material-icons">close</i>
+      </div>
+
+      <div class="modal-content">
+        <div class="row">
+          <div class="col-12">
+            <div>
+              <img class="fullPicture" alt="full-picture">
+            </div>
+            <div>
+              <p id="bigName"></p>
+              <p id="user"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" id="info">
+            <div class="info" id="location"></div>
+            <div class="info" id="email"></div>
+            <div class="info" id="cell"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <footer>
+      <ul>
+        <li><a href=""></a><i class="material-icons">favorite_border</i></li>
+        <li><a href=""></a><i class="material-icons">access_time</i></li>
+        <li><a href=""></a><i class="material-icons">forum</i></li>
+        <li><a href=""></a><i class="material-icons">people_outline</i></li>
+        <li><a href=""></a><i class="material-icons">build</i></li>
+      </ul>
+    </footer>
+
+
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/animatedModal.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

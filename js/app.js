@@ -3,6 +3,7 @@ var api ={
 }
 
 var loadPage = function(){
+  $("#demo01").animatedModal();
   loadUser();
 }
 
@@ -10,11 +11,24 @@ var loadUser = function(){
   $.getJSON(api.url, function(response){
     var results = response.results;
     results.forEach(contactList);
+
+    $(".card").click(function(){
+      if(this){
+        $(".fullPicture").attr("src", $(this).find("div > img").attr("src"));
+        $("#bigName").text($(this).find("#fullName").text());
+        $("#user").text($(this).find("#user_name").text());
+        $("#location").text($(this).find("#street").text());
+        $("#email").text($(this).find("#mail").text());
+        $("#cell").text($(this).find("#phone").text());
+
+      }
+
+    });
   });
 }
 
 var contactList = function(contact){
-  var firtsName = contact.name.first;
+  var firstName = contact.name.first;
   var lastName = contact.name.last;
   var userName = contact.login.username;
   var picture = contact.picture.large;
@@ -24,47 +38,51 @@ var contactList = function(contact){
 
   var templateList =  '<div class="col-6 card">' +
                         '<div>' +
-                          '<a href="detailContact.html">' +
-                            '<img src='+ picture + '>'
-                          +'</a>' +
+                            '<img src='+ picture + '>'+
                         '</div>' +
                         '<div class="name">' +
-                          '<p>' + firtsName + ' ' + lastName +'</p>' +
-                          '<p>' + '@' + userName + '</p>' +
+                          '<p id="fullName">' + firstName + ' ' + lastName +'</p>' +
+                          '<p id="user_name">' + '@' + userName + '</p>' +
                         '</div>' +
+                        '<div class="invisible">' +
+                          '<p id="street">'+ location +'</p>' +
+                          '<p id="mail">'+ email +'</p>' +
+                          '<p id="phone">'+ cell +'</p>'
+                        '</div>'+
                       '</div>';
 
-  $('#here').append(templateList);
+  $('#demo01').append(templateList);
+
+  // $("#location").append(location);
+  // $("#email").append(email);
+  // $("#cell").append(cell);
 
 
-  var templateContact = '<div class="row">'+
-                          '<div class="col-12">' +
-                           '<div>' +
-                            '<img class="fullPicture" src='+ picture + '>' +
-                           '</div>' +
-                           '<div class="bigName">' +
-                             '<p>' + firtsName + ' ' + lastName +'</p>' +
-                             '<p>' + '@' + userName + '</p>' +
-                           '</div>' +
-                          '</div>'+
-                        '</div>' +
+  // $(".card").click(function(){
+  //   console.log($(this).index());
+  //   // $(this).slideUp(function(){
+  //   //   console.log("holaa");
+  //   // });
+  //   if(this){
+  //     // $(this).hide();
+  //     var photo = $("img").attr("src", picture)
+  //
+  //     $("fullPicture").append(photo);
+  //     $(".no").append(firstName + " " + lastName);
+  //     $(".user").append("@" + userName);
+  //
+  //   }
 
-                        '<div class="row">'+
-                          '<div class="col-12">'+
-                            '<div class="info">'+
-                              location +
-                            '</div>'+
-                            '<div class="info">' +
-                              email +
-                            '</div>' +
-                            '<div class="info">' +
-                              cell +
-                            '</div>' +
-                          '</div>'+
-                        '</div>'
 
-  $("#detail").append(templateContact);
+    // $(this).click(function(){
+    //   console.log("seleccionado")
+    // });
+  // });
+
 }
+
+
+
 
 
 
